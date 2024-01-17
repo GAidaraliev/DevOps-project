@@ -10,20 +10,22 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: user-api
     # Service containers to run with `runner-job`
-    container: node:10.18-jessie
+    container: node
     services:
       # Label used to access the service container
       redis:
         # Docker Hub image
         image: redis
-        #
+        ports:
+          # Opens tcp port 6379 on the host and service container
+          - 6379:6379
         options: >-
           --health-cmd "redis-cli ping"
           --health-interval 10s
