@@ -11,26 +11,12 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
+    
     defaults:
       run:
         working-directory: user-api
-    # Service containers to run with `runner-job`
-    container: node
-    services:
-      # Label used to access the service container
-      redis:
-        # Docker Hub image
-        image: redis
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          # Maps port 6379 on service container to the host
-          - 6379:6379
+        
     strategy:
       matrix:
         node-version: [16.x, 18.x]
@@ -49,11 +35,6 @@ jobs:
       uses: supercharge/redis-github-action@1.7.0
       with:
         redis-version: ${{ matrix.redis-version }}
-      env:
-          # The hostname used to communicate with the Redis service container
-          REDIS_HOST: redis
-          # The default Redis port
-          REDIS_PORT: 6379
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
