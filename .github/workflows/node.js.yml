@@ -13,9 +13,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: user-api
     strategy:
       matrix:
         node-version: [16.x, 18.x]
@@ -29,6 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: user-api/package-lock.json
     - name: Start Redis
       uses: supercharge/redis-github-action@1.7.0
       with:
