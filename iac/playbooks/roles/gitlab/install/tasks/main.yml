@@ -25,7 +25,7 @@
     name: git
     state: present
 
-- name: Clone GitHub repositorys
+- name: Clone GitHub repository
   ansible.builtin.git:
     repo: https://github.com/GAidaraliev/DevOps-project.git
     dest: /home/vagrant/webapp
