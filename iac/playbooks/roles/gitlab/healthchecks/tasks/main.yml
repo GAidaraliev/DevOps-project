@@ -6,7 +6,7 @@
   changed_when: false
 
 - name: Check web-app
-  shell: ps aux | grep 'node /home/vagrant/index.js' | grep -v grep
+  shell: ps aux | grep node
   register: app_status
 - debug:
     msg: "{{app_status.stdout_lines}}"

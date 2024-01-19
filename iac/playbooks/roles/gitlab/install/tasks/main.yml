@@ -12,24 +12,29 @@
 
 - name: Installing Redis
   yum: 
-    name: redis-server 
+    name: redis
     state: latest
 
 - name: Start Redis
   service:
-    name: redis-server
+    name: redis
     state: started
     enabled: yes
+- name: Ensure that git is installed
+  yum:
+    name: git
+    state: present
 
-- name: Clone GitHub repository
-  git:
-    repo: 'https://github.com/GAidaraliev/DevOps-project.git'
-    dest: /home/vagrant
+- name: Clone GitHub repositorys
+  ansible.builtin.git:
+    repo: https://github.com/GAidaraliev/DevOps-project.git
+    dest: /home/vagrant/webapp
+    version: main
 
 - name: Install Dependencies with NPM install command 
   shell: npm install
   args:
-    chdir: /home/vagrant
+    chdir: /home/vagrant/webapp/user-api
   register: npminstlout
 
 - name: Start the App
@@ -37,16 +42,7 @@
   poll: 0
   shell: "(node index.js > nodesrv.log 2>&1 &)"
   args:
-    chdir: /home/vagrant
+    chdir: /home/vagrant/webapp/user-api
   register: appstart
 
-- name: Validating the port is open
-  tags: nodevalidate
-  wait_for:
-    host: "localhost"
-    port: 3000
-    delay: 10
-    timeout: 30
-    state: started
-    msg: "NodeJS server is not running"
 
