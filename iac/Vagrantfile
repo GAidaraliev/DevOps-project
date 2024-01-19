@@ -1,0 +1,32 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vbguest.installer_options = { allow_kernel_upgrade: true }
+  config.ssh.insert_key = false
+  # Define the VM
+  config.vm.define "gitlab_server" do |server|
+    # Specify the Vagrant box to use
+    server.vm.box = "centos/7"
+    # Specify the VM ip address
+    config.vm.network "forwarded_port", guest: 80, host: 8080 
+    # Configuring sync folder between app and VM
+    config.vm.synced_folder ".", "/vagrant"
+    # Specify the VM specs when using the Virtualbox provisioner}  
+	  server.vm.provider "virtualbox" do |vb|
+      vb.name =  "gitlab.server.local"
+      # VM RAM in MB
+      vb.memory = 2048
+      # VM CPUs
+      vb.cpus = 1
+    end
+  end
+
+  # Use Vagrant Ansible provisioner
+  config.vm.provision "ansible_local" do |ansible|
+    # The path to the playbooks entry point
+    ansible.playbook = "iac/playbooks/run.yml"
+    # Only run the roles with these tags
+    ansible.tags = ["install", "check"]
+  end
+end

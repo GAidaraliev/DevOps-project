@@ -1,0 +1,52 @@
+---
+- name: Update yum repo and cache
+  yum: 
+    update_cache: yes
+
+- name: Install nodejs and npm
+  yum:
+    name:
+    - nodejs
+    - npm
+    state: present
+
+- name: Installing Redis
+  yum: 
+    name: redis-server 
+    state: latest
+
+- name: Start Redis
+  service:
+    name: redis-server
+    state: started
+    enabled: yes
+
+- name: Clone GitHub repository
+  git:
+    repo: 'https://github.com/GAidaraliev/DevOps-project.git'
+    dest: /home/vagrant
+
+- name: Install Dependencies with NPM install command 
+  shell: npm install
+  args:
+    chdir: /home/vagrant
+  register: npminstlout
+
+- name: Start the App
+  async: 10
+  poll: 0
+  shell: "(node index.js > nodesrv.log 2>&1 &)"
+  args:
+    chdir: /home/vagrant
+  register: appstart
+
+- name: Validating the port is open
+  tags: nodevalidate
+  wait_for:
+    host: "localhost"
+    port: 3000
+    delay: 10
+    timeout: 30
+    state: started
+    msg: "NodeJS server is not running"
+

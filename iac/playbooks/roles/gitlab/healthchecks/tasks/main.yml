@@ -1,0 +1,12 @@
+---
+- name: Check redis
+  shell: redis-cli ping
+  register: redis_ping
+  failed_when: redis_ping.stdout != "PONG"
+  changed_when: false
+
+- name: Check web-app
+  shell: ps aux | grep 'node /home/vagrant/index.js' | grep -v grep
+  register: app_status
+- debug:
+    msg: "{{app_status.stdout_lines}}"
