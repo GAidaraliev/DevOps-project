@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-deployment-v1
+  labels:
+    app: nodejs
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: nodejs
+        version: v1
+    spec:
+      containers:
+      - name: nodejs
+        image: galiaydaraliev/nodejs:latest  #image
+        ports:
+        - containerPort: 3000
+        env:
+          - name: REDIS_HOST
+            value: redis-service
+          - name: REDIS_PORT
+            value: "6379"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-deployment-v2
+  labels:
+    app: nodejs
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: nodejs
+        version: v2
+    spec:
+      containers:
+      - name: nodejs
+        image: galiaydaraliev/nodejs:latest  #image
+        ports:
+        - containerPort: 3000
+        env:
+          - name: REDIS_HOST
+            value: redis-service
+          - name: REDIS_PORT
+            value: "6379"
