@@ -7,8 +7,11 @@ services:
       - "6379:6379"
     volumes:
       - redis-data:/data
+    networks:
+      - default
   webservice:
     build: ./user-api
+    container_name: webservice
     environment:
       REDIS_HOST: redis
       REDIS_PORT: 6379
@@ -16,6 +19,34 @@ services:
       - "3000:3000"
     depends_on:
       - redis
-
+    networks:
+      - default
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - type: bind
+        source: ./monitoring/prometheus.yml
+        target: /etc/prometheus/prometheus.yml
+    container_name: prometheus
+    ports:
+      - 9090:9090
+    networks:
+      - default
+    depends_on:
+      - webservice
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    volumes:
+      - ./monitoring/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
+    ports:
+      - 8080:3000
+    networks:
+      - default
+    depends_on:
+      - prometheus
+networks:
+    default:
+      driver: bridge
 volumes:
   redis-data:
