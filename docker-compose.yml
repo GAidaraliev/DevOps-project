@@ -8,7 +8,7 @@ services:
     volumes:
       - redis-data:/data
   webservice:
-    build: ./
+    build: ./user-api
     environment:
       REDIS_HOST: redis
       REDIS_PORT: 6379
