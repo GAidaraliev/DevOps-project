@@ -50,7 +50,8 @@ npm install
 ```
 npm test
 ```
-I enriched the given NodeJS web-app with CRUD user functionality and covered it with tests of different levels   
+I enriched the given NodeJS web-app with CRUD user functionality and covered it with tests of different levels 
+---
 ![](images/test.PNG)
 
 - Start application:
@@ -58,6 +59,7 @@ I enriched the given NodeJS web-app with CRUD user functionality and covered it 
 npm start
 ```
 It is possible to check all CRUD functionalities with [Postman](https://www.postman.com)
-![POST](images/postman.PNG)
-![PUT](images/postman2.PNG)
-![DELETE](images/postman3.PNG)
+
+1. POST ![POST](images/postman.PNG)
+2. PUT ![PUT](images/postman2.PNG)
+3. DELETE ![DELETE](images/postman3.PNG)
