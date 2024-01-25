@@ -40,60 +40,24 @@ To clone the repository:
 - **Windows:** double click on `redis-cli.exe` and run the `ping` command inside this terminal
 - **MacOS and Linux:** run in a new terminal window `redis-cli ping` (should answer with "PONG")
 
+**Next steps**
 
+- Install application at the `../DEVOPS-PROJECT/user-api` directory (where `package.json` file is located)
+```
+npm install
+```
+- Run tests:
+```
+npm test
+```
+I enriched the given NodeJS web-app with CRUD user functionality and covered it with tests of different levels   
+![](images/test.PNG)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Install Node and NPM
-
-do `docker-compose up` hghjghj
-
-![](images/kube8.PNG)
-
-the [file](user-api/Dockerfile) to know 
+- Start application:
+```
+npm start
+```
+It is possible to check all CRUD functionalities with [Postman](https://www.postman.com)
+![POST](images/postman.PNG)
+![PUT](images/postman2.PNG)
+![DELETE](images/postman3.PNG)
