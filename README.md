@@ -94,4 +94,8 @@ It will initialize the VM using Vagrant configuration [file](https://github.com/
 ## VirtualBox
 ![](images/vagrant.PNG)
 
-After that using Ansible [playbooks](https://github.com/GAidaraliev/DevOps-project/tree/main/iac/playbooks) we provision the VM with tools that allows us to deploy the web-app.  
+After that using Ansible [playbooks](https://github.com/GAidaraliev/DevOps-project/tree/main/iac/playbooks) we provision the VM with tools that allows us to deploy the web-app and check its functionality.
+
+## Results of code exectution
+![](images/ansible.PNG)
+
