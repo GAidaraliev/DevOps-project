@@ -65,3 +65,33 @@ It is possible to check all CRUD functionalities with [Postman](https://www.post
 1. **POST** ![](images/postman.PNG)
 2. **PUT** ![](images/postman2.PNG)
 3. **DELETE** ![](images/postman3.PNG)
+
+# 2. CI/CD
+Configure and apply CI/CD pipeline 
+## GitHub Actions
+- Continuous Integration has been setup with **GitHub Actions**
+It was necessary to create the workflow into [Github-Actions](https://github.com/GAidaraliev/DevOps-project/actions) which deploys and tests our web-app. The code of the workflow `nodejs.yml` is presented [here](https://github.com/GAidaraliev/DevOps-project/tree/main/.github/workflows) 
+
+## The result of test
+![](images/github.PNG)
+
+## Azure
+- Continuous Deployment has been setup with Microsoft Azure
+
+## The result of Azure deployment
+
+# 3. Infrastructure as Code
+**Before starting**
+1. Install Vagrant: - https://www.vagrantup.com/downloads.html.
+
+**Next steps**
+Run the command
+````
+vagrant up
+````
+It will initialize the VM using Vagrant configuration [file](https://github.com/GAidaraliev/DevOps-project/blob/main/iac/Vagrantfile)
+
+## VirtualBox
+![](images/vagrant.PNG)
+
+After that using Ansible [playbooks](https://github.com/GAidaraliev/DevOps-project/tree/main/iac/playbooks) we provision the VM with tools that allows us to deploy the web-app.  
