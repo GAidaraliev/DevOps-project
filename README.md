@@ -112,14 +112,12 @@ The image will be created using a [Dockerfile](https://github.com/GAidaraliev/De
 ## Checking
 ![](images/docker.PNG)
 
-However, it is impossible to push the image to Docker Hub for my region but I totally understand how to do it.  
-## Checking
+However, it must be said that it is impossible to push the image to Docker Hub for my region but **I totally understand how to do it.**
+
+## Denial of access attempts
 ![](images/docker2.PNG)
 
-
-
-
-# 5 Container orchestration using Docker Compose
+# 5. Container orchestration using Docker Compose
 
 The web-app can be started using docker-compose.yml file
 
