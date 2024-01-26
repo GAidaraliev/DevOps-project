@@ -99,3 +99,30 @@ After that using Ansible [playbooks](https://github.com/GAidaraliev/DevOps-proje
 ## Results of code exectution
 ![](images/ansible.PNG)
 
+# 4. Docker image of the application
+
+* Navigate to the `../DEVOPS-PROJECT/user-api` directory and run the command
+````
+docker build -t devops-project-webservice .
+````
+The image will be created using a [Dockerfile](https://github.com/GAidaraliev/DevOps-project/blob/main/user-api/Dockerfile)
+
+* Check if your Docker container appears in the local Docker images
+
+## Checking
+![](images/docker.PNG)
+
+However, it is impossible to push the image to Docker Hub for my region but I totally understand how to do it.  
+## Checking
+![](images/docker2.PNG)
+
+
+
+
+# 5 Container orchestration using Docker Compose
+
+The web-app can be started using docker-compose.yml file
+
+
+
+
