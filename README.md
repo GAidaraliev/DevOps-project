@@ -119,8 +119,24 @@ However, it must be said that it is impossible to push the image to Docker Hub f
 
 # 5. Container orchestration using Docker Compose
 
-The web-app can be started using docker-compose.yml file
+The web-app can be started using [docker-compose.yml](https://github.com/GAidaraliev/DevOps-project/blob/main/docker-compose.yml) file
+* Navigate to the `../DEVOPS-PROJECT` directory and run the command `docker-compose up`
+````
+docker-compose up
+````
+## Result of code execution
+![](images/docker3.PNG)
 
+* Check the functional correctness by sending a POST request with the following command:
+````
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"username":"sergkudinov","firstname":"sergei","lastname":"kudinov"}' \
+  http://localhost:3000/user
+````
+## Checking
+![](images/docker4.PNG)
 
+* Check the list of running containers `docker ps`
 
-
+# 6. Docker orchestration using Kubernetes
