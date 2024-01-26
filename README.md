@@ -140,4 +140,57 @@ curl --header "Content-Type: application/json" \
 * You can also check the list of running containers using `docker ps` command
 
 # 6. Docker orchestration using Kubernetes
-As I said before I don't have access to Docker Hub that's why there won't be any screenshots. I tried to use my local docker images with minikube but it didn't work. 
+To begin Kubernetes, install [**minikube**](https://kubernetes.io/fr/docs/tasks/tools/install-minikube/). Then start minikube with the command `minikube start`
+
+As I said before I don't have access to Docker Hub that's why I use my local docker images with minikube. 
+I used the method which provides a straightforward approach to push local docker images seamlessly into Minikube's in-cluster docker daemon
+
+## Instructions
+**Step 1:** Setting up the shell environmental variables
+````
+eval $(minikube docker-env)
+````
+**Step 2:** Building the docker image locally
+````
+docker build -t devops-project-webservice .
+````
+**Step 3:** Switch back to the local docker daemon
+````
+eval $(minikube docker-env -u)
+````
+
+## Deploy an app using Persistent Volume and Persistent Volume Claim
+* Navigate to the `../DEVOPS-PROJECT/k8s` directory and run the following command
+````
+kubectl apply -f nodejs-deployment.yaml
+kubectl apply -f nodejs-service.yaml
+kubectl apply -f redis-deployment-pvc.yaml
+kubectl apply -f redis-service.yaml
+kubectl apply -f pvc.yaml
+kubectl apply -f pv.yaml
+````
+* Connect dashboard to track the status of processes
+````
+minikube dashboard
+````
+### Dashboard
+![](images/minikube.PNG)
+
+* Open nodejs-service in default browser
+````
+minikube service nodejs-service
+````
+### URL of web-service
+![](images/minikube2.PNG)
+
+* Check the functional correctness by sending a POST request with the following command:
+**`localhost:3000` should be replaced with the aforecited URL**
+````
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"username":"sergkudinov","firstname":"sergei","lastname":"kudinov"}' \
+  http://localhost:3000/user
+````
+
+
+
