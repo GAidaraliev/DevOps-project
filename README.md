@@ -120,7 +120,7 @@ However, it must be said that it is impossible to push the image to Docker Hub f
 # 5. Container orchestration using Docker Compose
 
 The web-app can be started using [docker-compose.yml](https://github.com/GAidaraliev/DevOps-project/blob/main/docker-compose.yml) file
-* Navigate to the `../DEVOPS-PROJECT` directory and run the command `docker-compose up`
+* Navigate to the `../DEVOPS-PROJECT` directory and run the command
 ````
 docker-compose up
 ````
@@ -137,6 +137,7 @@ curl --header "Content-Type: application/json" \
 ## Checking
 ![](images/docker4.PNG)
 
-* Check the list of running containers `docker ps`
+* You can also check the list of running containers using `docker ps` command
 
 # 6. Docker orchestration using Kubernetes
+As I said before I don't have access to Docker Hub that's why there won't be any screenshots. I tried to use my local docker images with minikube but it didn't work. 

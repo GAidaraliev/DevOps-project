@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: nodejs
-        image: galiaydaraliev/nodejs:latest  #image
+        image: devops-project-webservice:latest #image
         ports:
         - containerPort: 3000
         env:
