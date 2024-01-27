@@ -266,3 +266,12 @@ npm install prom-client
 ````
 docker-compose up
 ````
+## Prometheus
+![](images/prom2.PNG)
+![](images/prom3.PNG)
+
+
+
+
+
+
