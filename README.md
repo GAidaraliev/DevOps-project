@@ -124,7 +124,7 @@ The web-app can be started using [docker-compose.yml](https://github.com/GAidara
 ````
 docker-compose up
 ````
-## Result of code execution
+## The result of code execution
 ![](images/docker3.PNG)
 
 * Check the functional correctness by sending a POST request with the following command:
@@ -142,7 +142,7 @@ curl --header "Content-Type: application/json" \
 # 6. Docker orchestration using Kubernetes
 To begin Kubernetes, install [**minikube**](https://kubernetes.io/fr/docs/tasks/tools/install-minikube/). Then start minikube with the command `minikube start`
 
-As I said before I don't have access to Docker Hub that's why I use my local docker images with minikube. 
+> As I said before I don't have access to Docker Hub that's why I use my local docker images with minikube. 
 I used the method which provides a straightforward approach to push local docker images seamlessly into Minikube's in-cluster docker daemon
 
 ## Instructions
@@ -185,7 +185,7 @@ minikube service nodejs-service
 
 * Check the functional correctness by sending a POST request with the following command:
 
-**`localhost:3000` should be replaced with the aforecited URL**
+> **`localhost:3000` should be replaced with the aforecited URL**
 ````
 curl --header "Content-Type: application/json" \
   --request POST \
@@ -202,11 +202,11 @@ curl --header "Content-Type: application/json" \
 ````
 - [Download and install Istio](https://istio.io/latest/docs/setup/getting-started/)
 
-I must admit that I could not have installed istio due to **my region**. I've tried all possible methods but nothing worked. 
-## Istio
+> I must admit that I could not have installed istio due to **my region**. I've tried all possible methods but nothing worked. 
+## Denial of installation attempts
 ![](images/istio1.PNG)
 
-However, I totally understood the process how to deploy the application using Istio. 
+> However, I totally understood the process how to deploy the application using Istio. 
 
 ## Traffic shifting (Canary rollout)
 I'd prefer to not describe the request route process as it repeats almost the same steps for the traffic shifting deployment in my case that is why I will focus on the last one. 
@@ -244,7 +244,7 @@ istioctl dashboard kiali
 ````
 
 # 8. Monitoring the app with Prometheus and Grafana
-Despite my above-mentioned restriction I was able to run Prometheus and Grafana with Docker Compose.
+> Despite my above-mentioned restriction I was able to run Prometheus and Grafana with Docker Compose.
 
 ## Before starting
 * It is necessary to install Prometheus client library for Node.js
