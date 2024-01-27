@@ -40,7 +40,7 @@ services:
     volumes:
       - ./monitoring/grafana_datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
       - ./monitoring/grafana_config.ini:/etc/grafana/config.ini
-      - grafana_data:/var/lib/grafana
+      # - ./monitoring/grafana_data:/var/lib/grafana
     ports:
       - 8080:3000
     networks:
