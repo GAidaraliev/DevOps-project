@@ -59,7 +59,7 @@ I enriched the given NodeJS web-app with CRUD user functionality and covered it 
 ```
 npm start
 ```
-It is possible to check all CRUD functionalities with [Postman](https://www.postman.com)
+It is possible to check all API methods with [Postman](https://www.postman.com)
 
 ## Checking
 1. **POST** ![](images/postman.PNG)
@@ -69,7 +69,7 @@ It is possible to check all CRUD functionalities with [Postman](https://www.post
 # 2. CI/CD
 Configure and apply CI/CD pipeline 
 ## GitHub Actions
-- Continuous Integration has been setup with **GitHub Actions**
+- Continuous Integration has been setup with **GitHub Actions**__
 It was necessary to create the workflow into [Github-Actions](https://github.com/GAidaraliev/DevOps-project/actions) which deploys and tests our web-app. The code of the workflow `nodejs.yml` is presented [here](https://github.com/GAidaraliev/DevOps-project/tree/main/.github/workflows) 
 
 ## The result of test
