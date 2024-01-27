@@ -251,6 +251,18 @@ Despite my above-mentioned restriction I was able to run Prometheus and Grafana 
 ````
 npm install prom-client
 ````
-* Expose prometheus metrics with following code snippet
+* Expose prometheus metrics with following code snippet at [index.js](https://github.com/GAidaraliev/DevOps-project/blob/main/user-api/src/index.js) file
 ## Code snippet
 ![](images/prom.PNG)
+
+## Prometheus and Grafana
+* Step 1: Create the Compose file
+In this step, I've completed a [docker-compose.yml](https://github.com/GAidaraliev/DevOps-project/blob/main/docker-compose.yml) file with `prometheus` and `grafana` services
+* Step 2: Create the Prometheus configuration file
+In this step, I've configured [`/monitoring/prometheus.yml`](https://github.com/GAidaraliev/DevOps-project/blob/main/monitoring/prometheus.yml) to scrape the web application status.
+* Step 3: Create the Grafana configuration files
+In this step, I've created ['/monitoring/grafana_config.ini'](https://github.com/GAidaraliev/DevOps-project/blob/main/monitoring/grafana_config.ini) file and copied into it the content from [**public grafana github**](https://github.com/grafana/grafana/blob/master/conf/defaults.ini). Besides, I've created a configuration file called ['/monitoring/grafana_datasources.yml'](https://github.com/GAidaraliev/DevOps-project/blob/main/monitoring/grafana_datasources.yml). This configuration file specifies Prometheus as a datasource for Grafana.
+* Step 4: Start the `prometheus` and `grafana` using the `docker-compose` command
+````
+docker-compose up
+````
