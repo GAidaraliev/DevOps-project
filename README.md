@@ -184,6 +184,7 @@ minikube service nodejs-service
 ![](images/minikube2.PNG)
 
 * Check the functional correctness by sending a POST request with the following command:
+
 **`localhost:3000` should be replaced with the aforecited URL**
 ````
 curl --header "Content-Type: application/json" \
@@ -191,6 +192,21 @@ curl --header "Content-Type: application/json" \
   --data '{"username":"sergkudinov","firstname":"sergei","lastname":"kudinov"}' \
   http://localhost:3000/user
 ````
+
+# 7. Service mesh using Istio
+## Before starting
+- Start a Kubernetes cluster
+````
+- minikube config set vm-driver virtualbox
+- minikube start --memory=16384 --cpus=4 --kubernetes-version=v1.26.0 --no-vtx-check
+````
+- [Download and install Istio](https://istio.io/latest/docs/setup/getting-started/)
+
+I must admit that I could not have installed istio due to my region. I've tried all possible methods but nothing worked. 
+## Istio
+![](images/istio1.PNG)
+
+However, I totally understood the process how to deploy the application using Istio. 
 
 
 
