@@ -143,7 +143,7 @@ curl --header "Content-Type: application/json" \
 To begin Kubernetes, install [**minikube**](https://kubernetes.io/fr/docs/tasks/tools/install-minikube/). Then start minikube with the command `minikube start`
 
 > As I said before I don't have access to Docker Hub that's why I use my local docker images with minikube. 
-I used the method which provides a straightforward approach to push local docker images seamlessly into Minikube's in-cluster docker daemon
+**I used the method which provides a straightforward approach to push local docker images seamlessly into Minikube's in-cluster docker daemon**
 
 ## Instructions
 **Step 1:** Setting up the shell environmental variables
@@ -185,7 +185,7 @@ minikube service nodejs-service
 
 * Check the functional correctness by sending a POST request with the following command:
 
-> **`localhost:3000` should be replaced with the aforecited URL**
+> `localhost:3000` should be replaced with the aforecited URL
 ````
 curl --header "Content-Type: application/json" \
   --request POST \
@@ -202,11 +202,11 @@ curl --header "Content-Type: application/json" \
 ````
 - [Download and install Istio](https://istio.io/latest/docs/setup/getting-started/)
 
-> I must admit that I could not have installed istio due to **my region**. I've tried all possible methods but nothing worked. 
+> I must admit that I could not have installed istio due to my region. **I've tried all possible methods but nothing worked.** 
 ## Denial of installation attempts
 ![](images/istio1.PNG)
 
-> However, I totally understood the process how to deploy the application using Istio. 
+> **However, I totally understood the process how to deploy the application using Istio.** 
 
 ## Traffic shifting (Canary rollout)
 I'd prefer to not describe the request route process as it repeats almost the same steps for the traffic shifting deployment in my case that is why I will focus on the last one. 
