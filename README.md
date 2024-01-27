@@ -274,7 +274,22 @@ docker-compose up
 ## Grafana screenshots
 ![](images/grafana.PNG)
 ---
-However I could not create alerts with Grafana
 
+# List of all tasks and bonuses
 
+| Subject                                                         |   Code    |   Grade   |
+|:----------------------------------------------------------------|:---------:|:---------:|
+| Enriched web application with automated tests                   |   APP     |    1/1    |
+| Continuous Integration and Continuous Delivery (and Deployment) |   CICD    |    3/3    |
+| Containerisation with Docker                                    |   D       |    1/1    |
+| Orchestration with Docker Compose                               |   DC      |    2/2    |
+| Orchestration with Kubernetes	                                  |   KUB     |    3/3    |
+| Service mesh using Istio                                        |   IST     |    2/2    |
+| Infrastructure as code using Ansible                            |   IAC     |    3/3    |
+| Monitoring                                                      |   MON     |  1.5/2    |
+| Accurate project documentation in README.md file                |   DOC     |    3/3    |
+| TOTAL GRADE                                                     |   TG      |  19.5/20  |
+| Bonus task: different API methods                               |   BNS     |     +1    |
+| Bonus task: different unit/functional/integration tests         |   BNS     |     +1    |
+| TOTAL GRADE                                                     |   TG      |  21.5/20  |
 
