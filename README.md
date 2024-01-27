@@ -234,16 +234,23 @@ kubectl port-forward -n istio-system service/istio-ingressgateway 1234:80
 ````
 curl -s http://localhost:1234/
 ````
-As the result I divided traffic between two versions of the web-app equally (50/50)
+As the result I've divided traffic between two versions of the web-app equally (50/50). Assuming that later version of app will be stable, it is possible to route 100% of the traffic to it in the future.
 
-In addition Kiali dashboard can be installed to visually display the result
+In addition Kiali dashboard can be installed to visually display the results
 ````
 kubectl apply -f samples/addons
 kubectl rollout status deployment/kiali -n istio-system
 istioctl dashboard kiali
 ````
 
+# 8. Monitoring the app with Prometheus and Grafana
+Despite my above-mentioned restriction I was able to run Prometheus and Grafana with Docker Compose.
 
-
-
-
+## Before starting
+* It is necessary to install Prometheus client library for Node.js
+````
+npm install prom-client
+````
+* Expose prometheus metrics with following code snippet
+## Code snippet
+![](images/prom.PNG)
