@@ -10,7 +10,7 @@ spec:
         version: v1
     - name: v2
       labels:
-        version: 
+        version: v2
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule

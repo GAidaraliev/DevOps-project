@@ -202,11 +202,45 @@ curl --header "Content-Type: application/json" \
 ````
 - [Download and install Istio](https://istio.io/latest/docs/setup/getting-started/)
 
-I must admit that I could not have installed istio due to my region. I've tried all possible methods but nothing worked. 
+I must admit that I could not have installed istio due to **my region**. I've tried all possible methods but nothing worked. 
 ## Istio
 ![](images/istio1.PNG)
 
 However, I totally understood the process how to deploy the application using Istio. 
+
+## Traffic shifting (Canary rollout)
+I'd prefer to not describe the request route process as it repeats almost the same steps for the traffic shifting deployment in my case that is why I will focus on the last one. 
+
+* Enable the istio sidecar injection for the default namespace
+````
+kubectl label namespace default istio-injection=enabled
+````
+* Navigate to the `../DEVOPS-PROJECT/istio` directory and install the web-application by running the following commands:
+
+````
+kubectl apply -f nodejs-deployment.yaml
+kubectl apply -f nodejs-service.yaml
+kubectl apply -f redis-deployment.yaml
+kubectl apply -f redis-service.yaml
+kubectl apply -f gateway.yaml
+kubectl apply -f virtual-service.yaml
+kubectl apply -f destination-rule.yaml
+````
+* Access app by port-forwarding to the istio ingressgateway service:
+````
+kubectl port-forward -n istio-system service/istio-ingressgateway 1234:80
+````
+
+
+
+
+
+
+
+
+
+
+
 
 
 
