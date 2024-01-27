@@ -230,15 +230,18 @@ kubectl apply -f destination-rule.yaml
 ````
 kubectl port-forward -n istio-system service/istio-ingressgateway 1234:80
 ````
+* Run the following command to get access
+````
+curl -s http://localhost:1234/
+````
+As the result I divided traffic between two versions of the web-app equally (50/50)
 
-
-
-
-
-
-
-
-
+In addition Kiali dashboard can be installed to visually display the result
+````
+kubectl apply -f samples/addons
+kubectl rollout status deployment/kiali -n istio-system
+istioctl dashboard kiali
+````
 
 
 
