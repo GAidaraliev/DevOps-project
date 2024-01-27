@@ -266,13 +266,15 @@ npm install prom-client
 ````
 docker-compose up
 ````
-## Prometheus results
+## Prometheus screenshots
 ![](images/prom2.PNG)
 ---
 ![](images/prom3.PNG)
 
-
-
+## Grafana screenshots
+![](images/grafana.PNG)
+---
+However I could not create alerts with Grafana
 
 
 
