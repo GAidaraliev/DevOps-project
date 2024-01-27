@@ -96,7 +96,7 @@ It will initialize the VM using Vagrant configuration [file](https://github.com/
 
 After that using Ansible [playbooks](https://github.com/GAidaraliev/DevOps-project/tree/main/iac/playbooks) we provision the VM with tools that allows us to deploy the web-app and check its functionality.
 
-## Results of code exectution
+## The result of code execution
 ![](images/ansible.PNG)
 
 # 4. Docker image of the application
@@ -112,7 +112,7 @@ The image will be created using a [Dockerfile](https://github.com/GAidaraliev/De
 ## Checking
 ![](images/docker.PNG)
 
-However, it must be said that it is impossible to push the image to Docker Hub for my region but **I totally understand how to do it.**
+> However, it must be said that it is impossible to push the image to Docker Hub for my region but **I totally understand how to do it.**
 
 ## Denial of access attempts
 ![](images/docker2.PNG)
