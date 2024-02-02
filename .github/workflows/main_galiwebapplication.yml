@@ -11,7 +11,7 @@ on:
 
 defaults:
   run:
-    working-directory: /userapi
+    working-directory: user-api
 
 jobs:
   build:
