@@ -9,13 +9,17 @@ on:
       - main
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: ./userapi
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: user-api  
+    # defaults:
+    #   run:
+    #     working-directory: user-api  
 
     services:
       redis:
@@ -53,9 +57,9 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: user-api  
+    # defaults:
+    #   run:
+    #     working-directory: user-api  
     needs: build
     environment:
       name: 'Production'
