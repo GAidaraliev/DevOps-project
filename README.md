@@ -208,7 +208,7 @@ curl --header "Content-Type: application/json" \
 ## Denial of installation attempts
 ![](images/istio1.PNG)
 
-> **However, I totally understood the process how to deploy the application using Istio.** 
+> **However, I totally understood the process how to deploy the application using Istio with https://killercoda.com/** 
 
 ## Traffic shifting (Canary rollout)
 I'd prefer to not describe the request route process as it repeats almost the same steps for the traffic shifting deployment in my case that is why I will focus on the last one. 
