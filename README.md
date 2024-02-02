@@ -76,9 +76,11 @@ It was necessary to create the workflow into [Github-Actions](https://github.com
 ![](images/github.PNG)
 
 ## Azure
-- Continuous Deployment has been setup with Microsoft Azure
+- Continuous Deployment has been setup with Microsoft Azure\
+I deployed the NodeJS application with Azure Application Services by following these [instructions](https://github.com/adaltas/dsti-devops-2023-spring/blob/main/modules/04.ci-cd/azure-webapp/webapp-tuto.md)
 
 ## The result of Azure deployment
+![](images/cicd.PNG)
 
 # 3. Infrastructure as Code
 **Before starting**
