@@ -66,7 +66,7 @@ jobs:
           name: node-app
 
       - name: Unzip artifact for deployment
-        run: unzip /home/runner/work/DevOps-project/DevOps-project/user-api/release.zip
+        run: unzip /home/runner/work/DevOps-project/DevOps-project/release.zip
       
       - name: Login to Azure
         uses: azure/login@v1
